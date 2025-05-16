@@ -15,6 +15,8 @@ int main() {
 
         while (!window_close_requested("Dino Dash DX")) {
             process_events();
+            handle_input(player);
+            update_dino(player);
             clear_screen(COLOR_WHITE);
             draw_dino(player);
             draw_line(COLOR_DARK_GREEN, 0, GROUND_Y, SCREEN_WIDTH, GROUND_Y);
