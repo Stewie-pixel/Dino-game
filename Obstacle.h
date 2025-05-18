@@ -6,7 +6,6 @@ using namespace std;
 
 struct Obstacle_Data {
     sprite cactus;
-    sprite bird;
     float speed;
     float x, y;
 };
