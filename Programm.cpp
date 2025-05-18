@@ -1,6 +1,6 @@
 #include "splashkit.h"
 #include "khunglong.h"
-#include "obstacle.h"
+#include "Obstacle.h"
 
 int main()
 {
