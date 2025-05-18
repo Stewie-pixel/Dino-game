@@ -1,5 +1,5 @@
 #include "splashkit.h"
-#include "Dinosaur.h"
+#include "khunglong.h"
 #include "obstacle.h"
 
 int main()
