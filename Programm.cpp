@@ -1,29 +1,34 @@
 #include "splashkit.h"
-#include "khunglong.h"
+#include "Dinosaur.h"
+#include "obstacle.h"
 
-using namespace std;
+int main()
+{
+    open_window("Dino Game", 800, 450);
+    load_resource_bundle("game_bundle", "game.txt");
 
-const int SCREEN_WIDTH = 800;
-const int SCREEN_HEIGHT = 300;
-const int GROUND_Y = 250;
+    Player_Data player;
+    Obstacle_Data obstacle;
 
-int main() {
-    open_window("Dino Dash DX", SCREEN_WIDTH, SCREEN_HEIGHT);
-    dino_data player=new_dino();
-    while(!window_close_requested("Dino Dash DX")) {
-        load_font("arial", "arial.ttf");
+    create_player(player);
+    create_Obstacle(obstacle);
 
-        while (!window_close_requested("Dino Dash DX")) {
-            process_events();
-            handle_input(player);
-            update_dino(player);
-            clear_screen(COLOR_WHITE);
-            draw_dino(player);
-            draw_line(COLOR_DARK_GREEN, 0, GROUND_Y, SCREEN_WIDTH, GROUND_Y);
-            refresh_screen(60);
-        }
+    while (!window_close_requested("Dino Game"))
+    {
+        process_events();
+
+        clear_screen(COLOR_WHITE);
+
+        update_player(player);
+        update_Obstacle(obstacle);
+
+        draw_player(player);
+        draw_Obstacle(obstacle);
+
+        refresh_screen(60);
     }
 
-
+    return 0;
 }
+
 
